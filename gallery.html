@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery — Rabus Hair Braids</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Raleway:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="gallery.css">
+</head>
+<body class="gallery-page">
+
+  <!-- CURSOR -->
+  <div class="cursor" id="cursor">
+    <div class="cur-ring"></div>
+    <div class="cur-dot"></div>
+  </div>
+
+  <!-- TOP NAV -->
+  <nav id="nav" class="scrolled">
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-img">
+        <img src="images/logo.png" alt="Rabus Logo"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+        <div class="nav-logo-fallback">R</div>
+      </div>
+      <div class="nav-logo-text">
+        <span class="logo-name">RABUS</span>
+        <span class="logo-tag">Hair Braids</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#services">Services</a></li>
+      <li><a href="gallery.html" class="nav-active">Gallery</a></li>
+      <li><a href="index.html#reviews">Reviews</a></li>
+    </ul>
+    <a href="index.html#booking" class="nav-book">Book Now</a>
+    <button class="nav-burger" id="burger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mob-menu" id="mobMenu">
+    <a href="index.html"   class="mob-link">Home</a>
+    <a href="index.html#about"    class="mob-link">About</a>
+    <a href="index.html#services" class="mob-link">Services</a>
+    <a href="gallery.html" class="mob-link">Gallery</a>
+    <a href="index.html#reviews"  class="mob-link">Reviews</a>
+    <a href="index.html#booking" class="mob-link mob-book">Book Now</a>
+  </div>
+
+  <!-- GALLERY HERO -->
+  <div class="g-hero">
+    <div class="g-hero-bg"></div>
+    <div class="wrap g-hero-content">
+      <a href="index.html" class="g-back">← Back to Home</a>
+      <p class="g-label">Portfolio</p>
+      <h1 class="g-title">Our <em>Gallery</em></h1>
+      <p class="g-desc">22 signature styles. Each one a unique masterpiece. Click any image to view full size.</p>
+    </div>
+  </div>
+
+  <!-- FILTER TABS -->
+  <div class="g-filters">
+    <div class="wrap">
+      <div class="ftabs">
+        <button class="ftab active" data-filter="all">All Styles</button>
+        <button class="ftab" data-filter="knotless">Knotless Braids</button>
+        <button class="ftab" data-filter="box">Box Braids</button>
+        <button class="ftab" data-filter="fulani">Fulani Braids</button>
+        <button class="ftab" data-filter="cornrow">Cornrows</button>
+        <button class="ftab" data-filter="twists">Twists</button>
+        <button class="ftab" data-filter="feed-in">Feed-In Braids</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- LIGHTBOX -->
+  <div class="g-lightbox" id="lightbox">
+    <button class="lb-close" onclick="closeLightbox()">×</button>
+    <button class="lb-prev"  onclick="lbNav(-1)">←</button>
+    <button class="lb-next"  onclick="lbNav(1)">→</button>
+    <div class="lb-content">
+      <img id="lbImg" src="" alt="">
+      <div class="lb-info">
+        <div class="lb-style" id="lbStyle"></div>
+        <div class="lb-coll"  id="lbColl"></div>
+      </div>
+    </div>
+    <div class="lb-count" id="lbCount"></div>
+  </div>
+
+  <!-- GALLERY GRID — 22 images -->
+  <section class="g-section">
+    <div class="g-grid" id="gGrid">
+
+      <div class="g-item reveal" data-cat="cornrow" data-idx="0" onclick="openLb(0)">
+        <img src="images/gallery1.jpg" alt="Intricate Cornrow" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+        <div class="g-ph">✦</div>
+        <div class="g-overlay"><div class="g-style">Intricate Cornrow</div><div class="g-coll">Cornrow Collection</div><div class="g-view">View ↗</div></div>
+      </div>
+
+      <div class="g-item reveal r1" data-cat="box" data-idx="1" onclick="openLb(1)">
+        <img src="images/gallery2.jpg" alt="Stitch Braids" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+        <div class="g-ph">◆</div>
+        <div class="g-overlay"><div class="g-style">Stitch Braids</div><div class="g-coll">Box Braid Series</div><div class="g-view">View ↗</div></div>
+      </div>
+
+      <div class="g-item reveal r2" data-cat="feed-in" data-idx="2" onclick="openLb(2)">
+        <img src="images/gallery3.jpg" alt="Feed-In Braids" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+        <div class="g-ph">⟡</div>
+        <div class="g-overlay"><div class="g-style">Feed-In Braids</div><div class="g-coll">Feed-In Collection</div><div class="g-view">View ↗</div></div>
+      </div>
+
+      <div class="g-item reveal" data-cat="goddess" data-idx="3" onclick="openLb(3)">
+        <img src="images/gallery4.jpg" alt="Goddess Braids" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+        <div class="g-ph">✧</div>
+        <div class="g-overlay"><div class="g-style">Goddess Braids</div><div class="g-coll">Goddess Collection</div><div class="g-view">View ↗</div></div>
+      </div>
+
+      <div class="g-item reveal r1" data-cat="twists" data-idx="4" onclick="openLb(4)">
+        <img src="images/gallery5.jpg" alt="Twist Style" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+        <div class="g-ph">❋</div>
+        <div class="g-overlay"><div class="g-style">Twist Style</div><div class="g-coll">Twist Collection</div><div class="g-view">View ↗</div></div>
+      </div>
+
+      <div class="g-item reveal r2" data-cat="fulani" data-idx="5" onclick="openLb(5)">
+        <img src="images/gallery6.jpg" alt="Fulani Braids" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+        <div class="g-ph">◈</div>
+        <div class="g-overlay"><div class="g-style">Fulani Braids</div><div class="g-coll">Heritage Collection</div><div class="g-view">View ↗</div></div>
+      </div>
+
+      <div class="g-item reveal" data-cat="feed-in" data-idx="6" onclick="openLb(6)">
+        <img src="images/gallery7.jpg" alt="Feed-In Braids" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+        <div class="g-ph">◉</div>
+        <div class="g-overlay"><div class="g-style">Feed-In Braids</div><div class="g-coll">Feed-In Collection</div><div class="g-view">View ↗</div></div>
+      </div>
+
+      <div class="g-item reveal r1" data-cat="knotless" data-idx="7" onclick="openLb(7)">
+        <img src="images/gallery8.jpg" alt="Knotless Braids" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+        <div class="g-ph">◐</div>
+        <div class="g-overlay"><div class="g-style">Knotless Braids</div><div class="g-coll">Knotless Collection</div><div class="g-view">View ↗</div></div>
+      </div>
+
+      <div class="g-item reveal r2" data-cat="twists" data-idx="8" onclick="openLb(8)">
+        <img src="images/gallery9.jpg" alt="Curly Twists" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+        <div class="g-ph">◇</div>
+        <div class="g-overlay"><div class="g-style">Curly Twists</div><div class="g-coll">Twist Collection</div><div class="g-view">View ↗</div></div>
+      </div>
+
+      <div class="g-item reveal" data-cat="fulani" data-idx="9" onclick="openLb(9)">
+        <img src="images/gallery10.jpg" alt="Fulani Braid" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+        <div class="g-ph">✦</div>
+        <div class="g-overlay"><div class="g-style">Fulani Braids</div><div class="g-coll">Heritage Collection</div><div class="g-view">View ↗</div></div>
+      </div>
+
+      <div class="g-item reveal r1" data-cat="cornrow" data-idx="10" onclick="openLb(10)">
+        <img src="images/gallery11.jpg" alt="Cornrows" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+        <div class="g-ph">◆</div>
+        <div class="g-overlay"><div class="g-style">Cornrows</div><div class="g-coll">Cornrow Collection</div><div class="g-view">View ↗</div></div>
+      </div>
+
+      <div class="g-item reveal r2" data-cat="twists" data-idx="11" onclick="openLb(11)">
+        <img src="images/gallery12.jpg" alt="Passion Twist" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+        <div class="g-ph">⟡</div>
+        <div class="g-overlay"><div class="g-style">Passion Twist</div><div class="g-coll">Twist Collection</div><div class="g-view">View ↗</div></div>
+      </div>
+
+      <div class="g-item reveal" data-cat="feed-in" data-idx="12" onclick="openLb(12)">
+        <img src="images/gallery13.jpg" alt="Feed-In Braids" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+        <div class="g-ph">✧</div>
+        <div class="g-overlay"><div class="g-style">Feed-In Braids</div><div class="g-coll">Feed-In Collection</div><div class="g-view">View ↗</div></div>
+      </div>
+
+      <div class="g-item reveal r1" data-cat="fulani" data-idx="13" onclick="openLb(13)">
+        <img src="images/gallery14.jpg" alt="Fulani Braids" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+        <div class="g-ph">❋</div>
+        <div class="g-overlay"><div class="g-style">Fulani Braids</div><div class="g-coll">Heritage Collection</div><div class="g-view">View ↗</div></div>
+      </div>
+
+      <div class="g-item reveal r2" data-cat="knotless" data-idx="14" onclick="openLb(14)">
+        <img src="images/gallery15.jpg" alt="Knotless Braids" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+        <div class="g-ph">◈</div>
+        <div class="g-overlay"><div class="g-style">Knotless Braids</div><div class="g-coll">Knotless Collection</div><div class="g-view">View ↗</div></div>
+      </div>
+
+      <div class="g-item reveal" data-cat="knotless" data-idx="15" onclick="openLb(15)">
+        <img src="images/gallery16.jpg" alt="Knotless Braids" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+        <div class="g-ph">◉</div>
+        <div class="g-overlay"><div class="g-style">Knotless Braids</div><div class="g-coll">Knotless Collection</div><div class="g-view">View ↗</div></div>
+      </div>
+
+      <div class="g-item reveal r1" data-cat="knotless" data-idx="16" onclick="openLb(16)">
+        <img src="images/gallery17.jpg" alt="Knotless Braids" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+        <div class="g-ph">◐</div>
+        <div class="g-overlay"><div class="g-style">Knotless Braids</div><div class="g-coll">Knotless Collection</div><div class="g-view">View ↗</div></div>
+      </div>
+
+      <div class="g-item reveal r2" data-cat="knotless" data-idx="17" onclick="openLb(17)">
+        <img src="images/gallery18.jpg" alt="Knotless Braids" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+        <div class="g-ph">◇</div>
+        <div class="g-overlay"><div class="g-style">Knotless Braids</div><div class="g-coll">Knotless Collection</div><div class="g-view">View ↗</div></div>
+      </div>
+
+      <div class="g-item reveal" data-cat="box" data-idx="18" onclick="openLb(18)">
+        <img src="images/gallery19.jpg" alt="Box Braids" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+        <div class="g-ph">✦</div>
+        <div class="g-overlay"><div class="g-style">Box Braids</div><div class="g-coll">Box Braid Series</div><div class="g-view">View ↗</div></div>
+      </div>
+
+      <div class="g-item reveal r1" data-cat="box" data-idx="19" onclick="openLb(19)">
+        <img src="images/gallery20.jpg" alt="Box Braids" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+        <div class="g-ph">◆</div>
+        <div class="g-overlay"><div class="g-style">Box Braids</div><div class="g-coll">Box Braid Series</div><div class="g-view">View ↗</div></div>
+      </div>
+
+      <div class="g-item reveal r2" data-cat="cornrow feed-in" data-idx="20" onclick="openLb(20)">
+        <img src="images/gallery21.jpg" alt="Feed-In Cornrows" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+        <div class="g-ph">⟡</div>
+        <div class="g-overlay"><div class="g-style">Feed-In Cornrows</div><div class="g-coll">Cornrow Collection</div><div class="g-view">View ↗</div></div>
+      </div>
+
+      <div class="g-item reveal" data-cat="box" data-idx="21" onclick="openLb(21)">
+        <img src="images/gallery22.jpg" alt="Box Braids" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+        <div class="g-ph">✧</div>
+        <div class="g-overlay"><div class="g-style">Box Braids</div><div class="g-coll">Box Braid Series</div><div class="g-view">View ↗</div></div>
+      </div>
+
+    </div>
+    <div class="g-count-bar">Showing <span id="gCount">22</span> of 22 styles</div>
+  </section>
+
+  <!-- BOOK CTA -->
+  <div class="g-cta-strip">
+    <div class="wrap g-cta-inner reveal">
+      <div>
+        <h2 class="g-cta-title">Inspired by what you see?</h2>
+        <p class="g-cta-desc">Reserve your session and let us create your masterpiece together.</p>
+      </div>
+      <a href="index.html#booking" class="btn-pink">Reserve Your Session ↗</a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-top">
+      <div class="wrap footer-grid">
+        <div class="ft-brand">
+          <a href="index.html" class="ft-logo"><span>RABUS</span><em>Hair Braids</em></a>
+          <p>Luxury braiding artistry rooted in culture, crafted with love.</p>
+          <div class="ft-social">
+            <a href="#">Instagram</a><a href="#">TikTok</a><a href="#">Pinterest</a>
+          </div>
+        </div>
+        <div class="ft-col">
+          <h4>Services</h4>
+          <a href="index.html#services">Box Braids</a>
+          <a href="index.html#services">Knotless Braids</a>
+          <a href="index.html#services">Goddess Braids</a>
+          <a href="index.html#services">Fulani Braids</a>
+        </div>
+        <div class="ft-col">
+          <h4>Studio</h4>
+          <a href="index.html#about">About Us</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="index.html#reviews">Reviews</a>
+          <a href="index.html#booking">Book Now</a>
+        </div>
+        <div class="ft-col">
+          <h4>Connect</h4>
+          <a href="#">Instagram</a>
+          <a href="#">TikTok</a>
+          <a href="/cdn-cgi/l/email-protection#8ce4e9e0e0e3ccfeedeef9ffeefeede5e8ffa2efe3e1">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="wrap footer-btm">
+        <span>© 2025 <strong>Rabus Hair Braids</strong>. All rights reserved.</span>
+        <span>Made with ✦ for extraordinary women</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MOBILE BOTTOM NAV — Gallery active -->
+
+  <script

@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rabus Hair Braids — Luxury Braiding Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Raleway:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="page-home">
+
+  <!-- LOADER -->
+  <div class="loader" id="loader">
+    <div class="loader-box">
+      <div class="loader-r">R</div>
+      <div class="loader-name">RABUS HAIR BRAIDS</div>
+      <div class="loader-bar-wrap"><div class="loader-bar-fill"></div></div>
+      <div class="loader-sub">Luxury Braiding Studio</div>
+    </div>
+  </div>
+
+  <!-- SUCCESS RECEIPT OVERLAY -->
+  <div class="success-overlay" id="successOverlay">
+    <div class="success-box">
+      <div class="success-ring"><div class="success-tick">✓</div></div>
+      <div class="success-burst">
+        <span></span><span></span><span></span>
+        <span></span><span></span><span></span>
+      </div>
+      <h2 class="success-title">Booking Received! 🎉</h2>
+      <p class="success-msg">Thank you! We will confirm your appointment shortly.</p>
+      <div class="receipt">
+        <div class="receipt-header">
+          <span class="receipt-logo">RABUS</span>
+          <span class="receipt-sub">Hair Braids · Booking Receipt</span>
+        </div>
+        <div class="receipt-divider"></div>
+        <div class="receipt-row"><span>Name</span><span id="rName">—</span></div>
+        <div class="receipt-row"><span>Phone</span><span id="rPhone">—</span></div>
+        <div class="receipt-row"><span>Style</span><span id="rStyle">—</span></div>
+        <div class="receipt-row"><span>Date</span><span id="rDate">—</span></div>
+        <div class="receipt-row"><span>Time</span><span id="rTime">—</span></div>
+        <div class="receipt-row" id="rNotesRow"><span>Notes</span><span id="rNotes">—</span></div>
+        <div class="receipt-divider"></div>
+        <div class="receipt-footer">We will text you to confirm. See you soon! 💇‍♀️</div>
+        <a href="tel:+13126470604" class="receipt-call-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.76a16 16 0 0 0 6.29 6.29l.97-.97a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Call Us Now — +1 (312) 647-0604
+        </a>
+      </div>
+      <button class="success-btn" onclick="closeSuccess()">Done</button>
+    </div>
+  </div>
+
+  <!-- CURSOR (desktop only) -->
+  <div class="cursor" id="cursor">
+    <div class="cur-ring"></div>
+    <div class="cur-dot"></div>
+  </div>
+
+  <!-- TOP NAV -->
+  <nav id="nav">
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-img">
+        <img src="images/logo.png" alt="Rabus Logo">
+      </div>
+      <div class="nav-logo-text">
+        <span class="logo-name">RABUS</span>
+        <span class="logo-tag">Hair Braids</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#hero" class="nav-active">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#booking">Contact</a></li>
+    </ul>
+    <a href="#booking" class="nav-book">Book Now</a>
+    <button class="nav-burger" id="burger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mob-menu" id="mobMenu">
+    <a href="#hero"        class="mob-link">Home</a>
+    <a href="#about"       class="mob-link">About</a>
+    <a href="#services"    class="mob-link">Services</a>
+    <a href="gallery.html" class="mob-link">Gallery</a>
+    <a href="#reviews"     class="mob-link">Reviews</a>
+    <a href="#booking"     class="mob-link mob-book">Book Now</a>
+  </div>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-inner">
+      <div class="hero-text">
+        <div class="hero-tag">
+          <span class="tag-line"></span>
+          <span class="tag-words">Luxury Braiding Studio — Est. 2018</span>
+        </div>
+        <h1 class="hero-title">
+          <span class="ht italic">Beautiful</span>
+          <span class="ht">Braids That</span>
+          <span class="ht">Tell Your Story.</span>
+        </h1>
+        <p class="hero-desc">Premium braiding artistry crafted with love, precision and cultural pride. Every client who sits in our chair leaves as a masterpiece.</p>
+        <div class="hero-actions">
+          <a href="#booking" class="btn-pink">Reserve Your Session</a>
+          <a href="gallery.html" class="btn-clear">View Our Work →</a>
+        </div>
+      </div>
+      <div class="hero-photo-wrap" id="heroWrap">
+        <img src="images/hero.jpg" alt="Rabus Hair Braids" class="hero-photo">
+        <div class="hero-stat">
+          <div class="stat-big">3K+</div>
+          <div class="stat-sm">Happy Clients</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <div class="scroll-bar"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- TICKER -->
+  <div class="ticker-wrap">
+    <div class="ticker-inner">
+      <span>BOX BRAIDS</span><span class="sep">✦</span>
+      <span>KNOTLESS BRAIDS</span><span class="sep">✦</span>
+      <span>GODDESS BRAIDS</span><span class="sep">✦</span>
+      <span>FULANI BRAIDS</span><span class="sep">✦</span>
+      <span>SENEGALESE TWISTS</span><span class="sep">✦</span>
+      <span>FRENCH CURL BRAIDS</span><span class="sep">✦</span>
+      <span>BRIDAL BRAIDS</span><span class="sep">✦</span>
+      <span>BOX BRAIDS</span><span class="sep">✦</span>
+      <span>KNOTLESS BRAIDS</span><span class="sep">✦</span>
+      <span>GODDESS BRAIDS</span><span class="sep">✦</span>
+      <span>FULANI BRAIDS</span><span class="sep">✦</span>
+      <span>SENEGALESE TWISTS</span><span class="sep">✦</span>
+      <span>FRENCH CURL BRAIDS</span><span class="sep">✦</span>
+      <span>BRIDAL BRAIDS</span><span class="sep">✦</span>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="wrap">
+      <div class="about-grid">
+        <div class="about-imgs reveal">
+          <div class="ab-big">
+            <img src="images/about-main.jpg" alt="Rabus Studio" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="ab-fallback">R</div>
+          </div>
+          <div class="ab-small">
+            <img src="images/about-small.jpg" alt="Braiding detail" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="ab-fallback" style="font-size:2rem">✦</div>
+          </div>
+          <div class="ab-badge">
+            <div class="ab-num">8+</div>
+            <div class="ab-lbl">Years of<br>Excellence</div>
+          </div>
+        </div>
+        <div class="about-words">
+          <p class="eyebrow reveal">Our Story</p>
+          <h2 class="sec-title reveal r1">More Than Braids.<br>It's <em>An Art Form.</em></h2>
+          <p class="body-text reveal r2">Rabus Hair Braids was built on one belief — that every woman deserves to feel like royalty. Our studio is warm, welcoming and dedicated to giving you styles that last and confidence that never fades.</p>
+          <p class="body-text reveal r2">From precision knotless braids to flowing goddess styles, we bring culture, craft and care to every single session.</p>
+          <div class="pillars reveal r3">
+            <div class="pillar">
+              <div class="pillar-icon">◈</div>
+              <div class="pillar-name">Heritage</div>
+              <div class="pillar-desc">Rooted in African braiding tradition and cultural pride.</div>
+            </div>
+            <div class="pillar">
+              <div class="pillar-icon">◆</div>
+              <div class="pillar-name">Precision</div>
+              <div class="pillar-desc">Every part, every braid — perfectly executed.</div>
+            </div>
+            <div class="pillar">
+              <div class="pillar-icon">✦</div>
+              <div class="pillar-name">Bespoke</div>
+              <div class="pillar-desc">Your style designed around your vision and lifestyle.</div>
+            </div>
+            <div class="pillar">
+              <div class="pillar-icon">◇</div>
+              <div class="pillar-name">Longevity</div>
+              <div class="pillar-desc">Protective styles built to stay fresh for weeks.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats-band">
+    <div class="wrap stats-row">
+      <div class="s-item reveal"><div class="s-num">3K+</div><div class="s-lbl">Happy Clients</div></div>
+      <div class="s-div"></div>
+      <div class="s-item reveal r1"><div class="s-num">40+</div><div class="s-lbl">Braid Styles</div></div>
+      <div class="s-div"></div>
+      <div class="s-item reveal r2"><div class="s-num">★ 5.0</div><div class="s-lbl">Rating</div></div>
+      <div class="s-div"></div>
+      <div class="s-item reveal r3"><div class="s-num">8+</div><div class="s-lbl">Years Mastery</div></div>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="wrap">
+      <div class="svc-top">
+        <div>
+          <p class="eyebrow reveal">What We Offer</p>
+          <h2 class="sec-title dark reveal r1">Our <em>Signature</em> Services</h2>
+        </div>
+        <p class="svc-sub reveal">Every style is a collaboration.<br>Every session is a ceremony.</p>
+      </div>
+      <div class="svc-grid">
+
+        <div class="svc-card reveal">
+          <div class="svc-img">
+            <img src="images/svc-box-braids.jpg" alt="Box Braids" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="svc-img-ph">◈</div>
+          </div>
+          <div class="svc-body">
+            <h3 class="svc-name">Box Braids</h3>
+            <p class="svc-desc">Sharp parts, perfect tension and a clean finish. Classic or jumbo — precision in every plait.</p>
+            <div class="svc-foot">
+              <div><div class="svc-price">From $180</div><div class="svc-time">5 — 7 hrs</div></div>
+              <a href="#booking" class="svc-btn">Book ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="svc-card reveal r1">
+          <div class="svc-img">
+            <img src="images/svc-knotless.jpg" alt="Knotless Braids" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="svc-img-ph">◆</div>
+          </div>
+          <div class="svc-body">
+            <h3 class="svc-name">Knotless Braids</h3>
+            <p class="svc-desc">Feed-in technique with zero scalp tension. The most natural, elegant finish in braiding.</p>
+            <div class="svc-foot">
+              <div><div class="svc-price">From $220</div><div class="svc-time">6 — 8 hrs</div></div>
+              <a href="#booking" class="svc-btn">Book ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="svc-card reveal r2">
+          <div class="svc-img">
+            <img src="images/svc-goddess.jpg" alt="Goddess Braids" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="svc-img-ph">✦</div>
+          </div>
+          <div class="svc-body">
+            <h3 class="svc-name">Goddess Braids</h3>
+            <p class="svc-desc">Regal, flowing and unforgettable. Created for weddings, galas and every moment that matters.</p>
+            <div class="svc-foot">
+              <div><div class="svc-price">From $280</div><div class="svc-time">4 — 6 hrs</div></div>
+              <a href="#booking" class="svc-btn">Book ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="svc-card reveal">
+          <div class="svc-img">
+            <img src="images/svc-fulani.jpg" alt="Fulani Braids" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="svc-img-ph">◇</div>
+          </div>
+          <div class="svc-body">
+            <h3 class="svc-name">Fulani Braids</h3>
+            <p class="svc-desc">Heritage as high art. Center parts, beaded accents and sculpted side braids.</p>
+            <div class="svc-foot">
+              <div><div class="svc-price">From $220</div><div class="svc-time">4 — 5 hrs</div></div>
+              <a href="#booking" class="svc-btn">Book ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="svc-card reveal r1">
+          <div class="svc-img">
+            <img src="images/svc-twists.jpg" alt="Senegalese Twists" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="svc-img-ph">◉</div>
+          </div>
+          <div class="svc-body">
+            <h3 class="svc-name">Senegalese Twists</h3>
+            <p class="svc-desc">Silky rope twists that stay sleek and shiny for weeks. Protective and effortlessly elegant.</p>
+            <div class="svc-foot">
+              <div><div class="svc-price">From $200</div><div class="svc-time">5 — 7 hrs</div></div>
+              <a href="#booking" class="svc-btn">Book ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="svc-card reveal r2">
+          <div class="svc-img">
+            <img src="images/svc-french-curl.jpg" alt="French Curl Braids" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="svc-img-ph">◐</div>
+          </div>
+          <div class="svc-body">
+            <h3 class="svc-name">French Curl Braids</h3>
+            <p class="svc-desc">Bouncy, glamorous curls at the ends of your braids. Playful, voluminous and absolutely stunning.</p>
+            <div class="svc-foot">
+              <div><div class="svc-price">From $190</div><div class="svc-time">4 — 6 hrs</div></div>
+              <a href="#booking" class="svc-btn">Book ↗</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY PREVIEW — 6 images, correct g-tags -->
+  <section id="gallery-preview">
+    <div class="wrap">
+      <div class="gp-head">
+        <div>
+          <p class="eyebrow reveal">Portfolio</p>
+          <h2 class="sec-title dark reveal r1">A Glimpse of <em>Our Work</em></h2>
+        </div>
+        <a href="gallery.html" class="view-all reveal">View Full Gallery →</a>
+      </div>
+      <div class="gp-grid">
+        <!-- gallery1 = Intricate Cornrow -->
+        <div class="gp-card big reveal">
+          <img loading="lazy" src="images/gallery1.jpg" alt="Intricate Cornrow">
+          <div class="gp-ph">✦</div>
+          <div class="gp-info"><span class="gp-name">Intricate Cornrow</span><span class="gp-cat">Signature Style</span></div>
+          <a href="gallery.html" class="gp-cover"></a>
+        </div>
+        <!-- gallery8 = Knotless Braids -->
+        <div class="gp-card reveal r1">
+          <img loading="lazy" src="images/gallery8.jpg" alt="Knotless Braids">
+          <div class="gp-ph">◆</div>
+          <div class="gp-info"><span class="gp-name">Knotless Braids</span><span class="gp-cat">Best Seller</span></div>
+          <a href="gallery.html" class="gp-cover"></a>
+        </div>
+        <!-- gallery4 = Goddess Braids -->
+        <div class="gp-card reveal r2">
+          <img loading="lazy" src="images/gallery4.jpg" alt="Goddess Braids">
+          <div class="gp-ph">✧</div>
+          <div class="gp-info"><span class="gp-name">Goddess Braids</span><span class="gp-cat">Bridal Edition</span></div>
+          <a href="gallery.html" class="gp-cover"></a>
+        </div>
+        <!-- gallery6 = Fulani Braids -->
+        <div class="gp-card reveal r3">
+          <img loading="lazy" src="images/gallery6.jpg" alt="Fulani Braids">
+          <div class="gp-ph">◇</div>
+          <div class="gp-info"><span class="gp-name">Fulani Braids</span><span class="gp-cat">Heritage Style</span></div>
+          <a href="gallery.html" class="gp-cover"></a>
+        </div>
+      </div>
+      <div class="gp-cta reveal">
+        <a href="gallery.html" class="btn-pink">See All 22 Styles →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section id="reviews">
+    <div class="wrap">
+      <p class="eyebrow reveal">Testimonials</p>
+      <h2 class="sec-title dark reveal r1">What Our <em>Clients</em> Say</h2>
+      <div class="rv-top">
+        <div class="rv-card dark reveal">
+          <div class="rv-stars">★★★★★</div>
+          <div class="rv-q">"</div>
+          <p class="rv-text">Dolly is absolutely an expert at knotless braiding and the reviews were spot-on: she is quick! I was done in record time and the braids are immaculate. Every single part is perfectly straight, every braid is perfectly even. I will absolutely be back.</p>
+          <div class="rv-line"></div>
+          <div class="rv-who"><div class="rv-av">J</div><div><div class="rv-name">jmj8087</div><div class="rv-role">Verified Client</div></div></div>
+        </div>
+        <div class="rv-card reveal r1">
+          <div class="rv-stars">★★★★★</div>
+          <div class="rv-q">"</div>
+          <p class="rv-text">The environment is very warm, clean and friendly. Prices are reasonable and her work is impeccable. I have been going to her for a while now and I am always satisfied. I would highly recommend her.</p>
+          <div class="rv-line"></div>
+          <div class="rv-who"><div class="rv-av">K</div><div><div class="rv-name">Kara Pittman</div><div class="rv-role">Loyal Client</div></div></div>
+        </div>
+      </div>
+      <div class="rv-bottom">
+        <div class="rv-card reveal">
+          <div class="rv-stars">★★★★★</div>
+          <div class="rv-q">"</div>
+          <p class="rv-text">I flew in from London just for this appointment. The Goddess Braids she did for my wedding were beyond anything I imagined. Every guest stopped to ask who did my hair.</p>
+          <div class="rv-line"></div>
+          <div class="rv-who"><div class="rv-av">N</div><div><div class="rv-name">Naomi Adeyemi</div><div class="rv-role">Bride · London</div></div></div>
+        </div>
+        <div class="rv-card reveal r1">
+          <div class="rv-stars">★★★★★</div>
+          <div class="rv-q">"</div>
+          <p class="rv-text">I have visited many salons over 10 years. Rabus Hair Braids is in a completely different league. Attention to scalp health, quality products and the final result — nothing compares.</p>
+          <div class="rv-line"></div>
+          <div class="rv-who"><div class="rv-av">Z</div><div><div class="rv-name">Zara Mensah</div><div class="rv-role">Client since 2022</div></div></div>
+        </div>
+        <div class="rv-card reveal r2">
+          <div class="rv-stars">★★★★★</div>
+          <div class="rv-q">"</div>
+          <p class="rv-text">Booked online, arrived on time, left feeling like royalty. My Fulani braids lasted 8 weeks and still looked fresh at week 7! This is hands down the best salon I have ever been to.</p>
+          <div class="rv-line"></div>
+          <div class="rv-who"><div class="rv-av">T</div><div><div class="rv-name">Tolu Bankole</div><div class="rv-role">Client since 2021</div></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKING — scrolls down, same page -->
+  <section id="booking">
+    <div class="wrap">
+      <div class="booking-grid">
+
+        <div class="booking-left">
+          <p class="eyebrow" style="color:var(--pink-light)">Book Your Session</p>
+          <h2 class="bk-title">Reserve Your <em>Appointment</em></h2>
+          <p class="bk-desc">Fill in the form and we will confirm your session within 24 hours.</p>
+          <div class="bk-info">
+            <div class="bk-info-item">
+              <div class="bk-icon">📍</div>
+              <div>
+                <div class="bk-label">Location</div>
+                <!-- Replace with real address -->
+                <div class="bk-val">Your City, State</div>
+              </div>
+            </div>
+            <div class="bk-info-item">
+              <div class="bk-icon">🕐</div>
+              <div>
+                <div class="bk-label">Hours</div>
+                <div class="bk-val">Mon–Sat: 9AM – 7PM</div>
+              </div>
+            </div>
+            <div class="bk-info-item">
+              <div class="bk-icon">📞</div>
+              <div>
+                <div class="bk-label">Phone</div>
+                <a href="tel:+13126470604" class="bk-val bk-phone">+1 (312) 647-0604</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="booking-right">
+          <form class="bk-form" id="bkForm">
+            <div class="f-row">
+              <div class="f-group">
+                <label>First Name *</label>
+                <input type="text" id="bkFirst" placeholder="Your first name" required>
+              </div>
+              <div class="f-group">
+                <label>Last Name *</label>
+                <input type="text" id="bkLast" placeholder="Your last name" required>
+              </div>
+            </div>
+            <div class="f-group">
+              <label>Phone Number *</label>
+              <input type="tel" id="bkPhone" placeholder="+1 (555) 000-0000" required>
+            </div>
+            <div class="f-group">
+              <label>Choose Your Style *</label>
+              <select id="bkStyle" required>
+                <option value="" disabled selected>Select a style</option>
+                <option value="Box Braids">Box Braids — From $180</option>
+                <option value="Knotless Braids">Knotless Braids — From $220</option>
+                <option value="Goddess Braids">Goddess Braids — From $280</option>
+                <option value="Fulani Braids">Fulani Braids — From $220</option>
+                <option value="Senegalese Twists">Senegalese Twists — From $200</option>
+                <option value="French Curl Braids">French Curl Braids — From $190</option>
+              </select>
+            </div>
+            <div class="f-row">
+              <div class="f-group">
+                <label>Preferred Date *</label>
+                <input type="date" id="bkDate" required>
+              </div>
+              <div class="f-group">
+                <label>Preferred Time *</label>
+                <select id="bkTime" required>
+                  <option value="" disabled selected>Select time</option>
+                  <option>9:00 AM</option><option>10:00 AM</option>
+                  <option>11:00 AM</option><option>12:00 PM</option>
+                  <option>1:00 PM</option><option>2:00 PM</option>
+                  <option>3:00 PM</option><option>4:00 PM</option>
+                  <option>5:00 PM</option>
+                </select>
+              </div>
+            </div>
+            <div class="f-group">
+              <label>Special Requests / Notes</label>
+              <textarea id="bkNotes" placeholder="Hair concerns, allergies, inspiration, special requests..."></textarea>
+            </div>
+            <button type="button" class="bk-submit" id="bkSubmit" onclick="submitBooking()">
+              <span id="bkSubmitTxt">Request Appointment</span>
+              <span>↗</span>
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CALL SECTION -->
+  <section id="call-section">
+    <div class="wrap">
+      <div class="call-box reveal">
+        <div class="call-words">
+          <p class="eyebrow" style="color:#F9A8D4">Get In Touch</p>
+          <h2 class="call-title">Prefer to speak <em>directly?</em></h2>
+          <p class="call-desc">Have questions about a style or need to discuss your appointment? We are just one call away.</p>
+        </div>
+        <a href="tel:+13126470604" class="call-btn">
+          <div class="call-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.76a16 16 0 0 0 6.29 6.29l.97-.97a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+          </div>
+          <div class="call-info">
+            <span class="call-label">Call Us Now</span>
+            <span class="call-number">+1 (312) 647-0604</span>
+          </div>
+          <span class="call-arrow">↗</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-top">
+      <div class="wrap footer-grid">
+        <div class="ft-brand">
+          <a href="index.html" class="ft-logo">
+            <span>RABUS</span><em>Hair Braids</em>
+          </a>
+          <p>Luxury braiding artistry rooted in culture, crafted with love. Every strand tells your story.</p>
+          <div class="ft-social">
+            <a href="#">Instagram</a><a href="#">TikTok</a><a href="#">Pinterest</a>
+          </div>
+        </div>
+        <div class="ft-col">
+          <h4>Services</h4>
+          <a href="#services">Box Braids</a>
+          <a href="#services">Knotless Braids</a>
+          <a href="#services">Goddess Braids</a>
+          <a href="#services">Fulani Braids</a>
+          <a href="#services">French Curl Braids</a>
+        </div>
+        <div class="ft-col">
+          <h4>Studio</h4>
+          <a href="#about">About Us</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="#reviews">Reviews</a>
+          <a href="#booking">Book Now</a>
+        </div>
+        <div class="ft-col">
+          <h4>Connect</h4>
+          <a href="#">Instagram</a>
+          <a href="#">TikTok</a>
+          <a href="/cdn-cgi/l/email-protection#5e2c3f3c2b2d363f372c3c2c3f373a2d1e39333f3732703d3133">Email Us</a>
+          <a href="tel:+13126470604">+1 (312) 647-0604</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="wrap footer-btm">
+        <span>© 2025 <strong>Rabus Hair Braids</strong>. All rights reserved.</span>
+        <span>Made with ✦ for extraordinary women</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- TOAST -->
+  <div class="toast" id="toast">
+    <span class="toast-icon" id="toastIcon">✦</span>
+    <div>
+      <div class="toast-title" id="toastTitle">Done!</div>
+      <div class="toast-msg" id="toastMsg"></div>
+    </div>
+    <button onclick="document.getElementById('toast').classList.remove('show')">×</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

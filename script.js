@@ -105,16 +105,22 @@ window.addEventListener('DOMContentLoaded', function() {
 ============================================================ */
 window.submitBooking = function() {
 
-  var first = document.getElementById('bkFirst').value.trim();
-  var last  = document.getElementById('bkLast').value.trim();
-  var phone = document.getElementById('bkPhone').value.trim();
-  var style = document.getElementById('bkStyle').value;
-  var date  = document.getElementById('bkDate').value;
-  var time  = document.getElementById('bkTime').value;
-  var notes = document.getElementById('bkNotes').value.trim();
+  var first   = document.getElementById('bkFirst').value.trim();
+  var last    = document.getElementById('bkLast').value.trim();
+  var phone   = document.getElementById('bkPhone').value.trim();
+  var style   = document.getElementById('bkStyle').value;
+  var date    = document.getElementById('bkDate').value;
+  var time    = document.getElementById('bkTime').value;
+  var notes   = document.getElementById('bkNotes').value.trim();
+  var consent = document.getElementById('bkConsent').checked;
 
   if (!first || !last || !phone || !style || !date || !time) {
     showToast('Missing fields', 'Please fill in all required fields.', true);
+    return false;
+  }
+
+  if (!consent) {
+    showToast('Consent required', 'Please check the SMS consent box.', true);
     return false;
   }
 

@@ -195,6 +195,14 @@ nav#nav.scrolled { background: rgba(10,10,10,0.97); backdrop-filter: blur(20px);
 .svc-btn   { font-family: var(--fr); font-size: 0.58rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--white); background: var(--pink); border: none; padding: 0.65rem 1.2rem; text-decoration: none; transition: background 0.3s; cursor: pointer; flex-shrink: 0; }
 .svc-btn:hover { background: var(--pink-dark); }
 
+/* Knotless size breakdown */
+.svc-sizes { list-style: none; margin: 0 0 1rem; border-top: 1px solid rgba(233,30,140,0.12); padding-top: 0.8rem; display: flex; flex-direction: column; gap: 0.4rem; }
+.svc-sizes li { display: flex; justify-content: space-between; font-family: var(--fr); font-size: 0.78rem; color: rgba(255,255,255,0.7); padding: 0.3rem 0; border-bottom: 1px dashed rgba(233,30,140,0.1); }
+.svc-sizes li span:first-child { color: rgba(255,255,255,0.5); }
+.svc-sizes li span:last-child { color: var(--pink-light); font-weight: 500; }
+.svc-call { display: inline-block; margin-bottom: 1.2rem; font-family: var(--fr); font-size: 0.68rem; font-weight: 600; letter-spacing: 0.1em; color: var(--pink-light); text-decoration: none; border-bottom: 1px solid rgba(244,114,182,0.35); padding-bottom: 2px; transition: color 0.3s, border-color 0.3s; }
+.svc-call:hover { color: var(--white); border-color: var(--white); }
+
 /* ===== GALLERY PREVIEW ===== */
 #gallery-preview { background: var(--off); }
 .gp-head { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 2.5rem; }

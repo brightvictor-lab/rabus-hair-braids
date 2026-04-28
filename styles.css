@@ -200,8 +200,12 @@ nav#nav.scrolled { background: rgba(10,10,10,0.97); backdrop-filter: blur(20px);
 .svc-sizes li { display: flex; justify-content: space-between; font-family: var(--fr); font-size: 0.78rem; color: rgba(255,255,255,0.7); padding: 0.3rem 0; border-bottom: 1px dashed rgba(233,30,140,0.1); }
 .svc-sizes li span:first-child { color: rgba(255,255,255,0.5); }
 .svc-sizes li span:last-child { color: var(--pink-light); font-weight: 500; }
-.svc-call { display: inline-block; margin-bottom: 1.2rem; font-family: var(--fr); font-size: 0.68rem; font-weight: 600; letter-spacing: 0.1em; color: var(--pink-light); text-decoration: none; border-bottom: 1px solid rgba(244,114,182,0.35); padding-bottom: 2px; transition: color 0.3s, border-color 0.3s; }
-.svc-call:hover { color: var(--white); border-color: var(--white); }
+
+/* Call Now — below all services */
+.svc-callout { text-align: center; margin-top: 3rem; }
+.svc-callout-btn { display: inline-flex; align-items: center; gap: 0.8rem; background: transparent; border: 1.5px solid var(--pink); color: var(--pink-light); font-family: var(--fr); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; text-decoration: none; padding: 1rem 2.5rem; transition: background 0.3s, color 0.3s, transform 0.3s; }
+.svc-callout-btn:hover { background: var(--pink); color: var(--white); transform: translateY(-2px); }
+.svc-callout-btn svg { flex-shrink: 0; }
 
 /* ===== GALLERY PREVIEW ===== */
 #gallery-preview { background: var(--off); }
